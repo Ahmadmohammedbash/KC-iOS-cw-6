@@ -25,21 +25,7 @@ struct ContentView: View {
                         counter[0] = counter[0] + 1
                     }
             }.padding()
-            HStack{
-                Spacer()
-                Text("الحمدلله").font(.title)
-                Spacer()
-                Text("\(counter[1])")
-                    .font(.largeTitle)
-                    .frame(width: 100, height: 100, alignment: .center)
-                    .foregroundColor(.white)
-                    .background(Color.green)
-                    .clipShape(Circle())
-                    .padding()
-                    .onTapGesture {
-                        counter[1] = counter[1] + 1
-                    }
-            }.padding()
+            ExtractedView()
             HStack{
                 Text("سبحان الله وبحمده").font(.title)
                 Spacer()
@@ -64,5 +50,25 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+struct ExtractedView: View {
+    var body: some View {
+        HStack{
+            Spacer()
+            Text("الحمدلله").font(.title)
+            Spacer()
+            Text("\(counter[1])")
+                .font(.largeTitle)
+                .frame(width: 100, height: 100, alignment: .center)
+                .foregroundColor(.white)
+                .background(Color.green)
+                .clipShape(Circle())
+                .padding()
+                .onTapGesture {
+                    counter[1] = counter[1] + 1
+                }
+        }.padding()
     }
 }
